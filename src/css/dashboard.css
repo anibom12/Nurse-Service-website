@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        background: #f5f5f5;
+        @apply text-slate-800;
+    }
+}
+
+@layer components {
+
+
+
+    .sidebar.open {
+        @apply -translate-x-0 z-50 lg:w-[66px] lg:overflow-x-hidden
+    }
+
+    .sidebar.open .sidebar-navigation .sidebar-link span {
+        @apply lg:w-0 lg:hidden
+    }
+
+    .sidebar.open .sidebar-title {
+        @apply text-sm
+    }
+
+    .backdrop.open {
+        @apply fixed top-0 left-0 w-full h-full bg-black/50 z-40 lg:hidden
+    }
+
+
+    .sidebar-title {
+        @apply text-center font-bold text-xl text-wrap;
+    }
+
+    .sidebar-navigation {
+        @apply flex flex-col gap-2
+    }
+
+
+
+    .sidebar-navigation .sidebar-link {
+        @apply flex justify-start items-center gap-1 text-sm font-medium capitalize
+    }
+
+    .sidebar-navigation .sidebar-link svg {
+        @apply size-5
+    }
+
+
+    .content-wrapper {
+        @apply h-full w-auto flex-grow
+    }
+
+
+
+
+    .content-container {
+        @apply overflow-auto h-[calc(100dvh-50px)] p-4
+    }
+
+
+    .btn {
+        @apply focus:ring-4 focus:ring-transparent font-medium rounded-lg text-sm text-center px-3 py-1.5 me-2 focus:outline-none
+    }
+
+
+
+    .card {
+        @apply p-2 flex flex-col gap-2 bg-white shadow-xl rounded-lg
+    }
+
+    .card.card-img {
+        @apply aspect-square object-cover object-center;
+    }
+
+    .badge {
+        @apply uppercase text-xs font-medium px-2 py-0.5 rounded-full
+    }
+
+    .badge.badge-success {
+        @apply bg-success-50 text-success-600;
+    }
+
+    .badge.badge-danger {
+        @apply bg-danger-50 text-danger-600;
+    }
+
+    .badge.badge-warning {
+        @apply bg-warning-50 text-warning-600;
+    }
+
+    .badge.badge-info {
+        @apply bg-info-50 text-info-600;
+    }
+
+}
+
+.responsive-table-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    overflow-x: auto;
+    border-radius: 20px;
+}
